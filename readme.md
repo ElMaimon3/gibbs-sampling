@@ -15,6 +15,12 @@ python gibbs_sampling.py sequences2.fa 60,0.99925 60,0.99925 60,0.99925 60,0.999
 Output
 The script saves a positions file and a PWM (Position Weight Matrix) file for each run. The positions file contains the final positions of the motifs in each sequence. The PWM file contains the PWM representing the motif.
 
+Visualizing Position Weight Matrices with Sequence Logos
+The makelogo.py script allows you to visualize Position Weight Matrices (PWMs) as sequence logos.
+Please note that you need to have the logomaker library installed. You can install it using pip:
+pip install logomaker
+Make sure to change the filename to the appropriate PWM file from the gibbs sampling algorithm.
+This script will generate a sequence logo from the PWM file, which provides a visual representation of the motif found by the Gibbs sampling algorithm. The height of each letter in the sequence logo corresponds to the frequency of the corresponding amino acid at that position in the motif. This can help you to understand the properties of the motif and to compare it with other motifs.
 Pseudocode
 Here’s a high-level overview of the algorithm implemented in the script:
 
