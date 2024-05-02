@@ -1,7 +1,7 @@
-Gibbs Sampling for Protein Sequences
+# Gibbs Sampling for Protein Sequences
 This Python script performs Gibbs sampling on a set of protein sequences to find regions of high similarity, which can indicate functionally important motifs.
 
-Usage
+# Usage
 The script can be run from the command line with the following syntax:
 
 python gibbs_sampling.py <input_file> <settings>...
@@ -12,16 +12,17 @@ For example, to run the algorithm on the second set of sequences, with T=60 and 
 
 python gibbs_sampling.py sequences2.fa 60,0.99925 60,0.99925 60,0.99925 60,0.99925
 
-Output
+# Output
 The script saves a positions file and a PWM (Position Weight Matrix) file for each run. The positions file contains the final positions of the motifs in each sequence. The PWM file contains the PWM representing the motif.
 
-Visualizing Position Weight Matrices with Sequence Logos
+# Visualizing Position Weight Matrices with Sequence Logos
 The makelogo.py script allows you to visualize Position Weight Matrices (PWMs) as sequence logos.
 Please note that you need to have the logomaker library installed. You can install it using pip:
 pip install logomaker
 Make sure to change the filename to the appropriate PWM file from the gibbs sampling algorithm.
 This script will generate a sequence logo from the PWM file, which provides a visual representation of the motif found by the Gibbs sampling algorithm. The height of each letter in the sequence logo corresponds to the frequency of the corresponding amino acid at that position in the motif. This can help you to understand the properties of the motif and to compare it with other motifs.
-Pseudocode
+
+# Pseudocode
 Here’s a high-level overview of the algorithm implemented in the script:
 
 Procedure calculate_frequency(sequences)
@@ -57,7 +58,7 @@ Procedure write_outputs(outfile1, outfile2, matrix, positions)
   Write pwm to outfile2 with each column containing an amino acid and its frequencies at each position
 End Procedure
 
-Dependencies
+# Dependencies
 This script requires Python 3 and the following Python libraries:
 
 numpy
@@ -66,8 +67,8 @@ os
 getopt
 random
 math
-Limitations
+# Limitations
 This script assumes that the input file and parameters are provided in the correct format and that the input file exists and can be read. The script also assumes that the sequences in the input file are long enough for the motif length and that the sequences contain only the 20 standard amino acids. The script does not check for these conditions and may produce incorrect results or crash if the conditions are not met.
 
-Future Improvements
+# Future Improvements
 Future versions of this script could include error handling and input validation, performance optimization, parallelization, checkpointing and resuming, progress monitoring and visualization, result analysis and interpretation, comparison with other methods, validation of results, handling of biases and errors in the input data, handling of uncertainties and variabilities in the sequences, handling of the biological context or function of the sequences, handling of the evolutionary relationships or conservation of the sequences, handling of the structural or physicochemical properties of the sequences, handling of the experimental or computational methods used to obtain the sequences, handling of the limitations or assumptions of the Gibbs sampling or the PWM, handling of the limitations or assumptions of the scoring system or the IC, handling of the limitations or assumptions of the temperature and decay parameters, handling of the limitations or assumptions of the random number generation, handling of the limitations or assumptions of the numerical computations, handling of the limitations or assumptions of the file formats or the command-line arguments.
